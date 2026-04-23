@@ -1,21 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="20" total="21" passed="1" failed="0" skipped="0">
+<testng-results ignored="21" total="22" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-22T17:17:58 GST" name="Polymer_TestSuite" finished-at="2026-04-22T17:18:06 GST" duration-ms="7967">
+  <suite started-at="2026-04-23T09:30:18 GST" name="Polymer_TestSuite" finished-at="2026-04-23T09:30:43 GST" duration-ms="25165">
     <groups>
     </groups>
-    <test started-at="2026-04-22T17:17:58 GST" name="FunctionalTest" finished-at="2026-04-22T17:18:06 GST" duration-ms="7967">
+    <test started-at="2026-04-23T09:30:18 GST" name="FunctionalTest" finished-at="2026-04-23T09:30:43 GST" duration-ms="25165">
       <class name="tests.HomePageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.HomePageTest@41d477ed]" started-at="2026-04-22T17:17:58 GST" name="setUp" finished-at="2026-04-22T17:18:03 GST" duration-ms="4161" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.HomePageTest@3590fc5b]" started-at="2026-04-23T09:30:18 GST" name="setUp" finished-at="2026-04-23T09:30:27 GST" duration-ms="9435" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyProductDetailPage()[pri:0, instance:tests.HomePageTest@41d477ed]" started-at="2026-04-22T17:18:03 GST" name="verifyProductDetailPage" finished-at="2026-04-22T17:18:06 GST" duration-ms="3535" status="PASS">
+        <test-method signature="verifyMenuButtonClick()[pri:0, instance:tests.HomePageTest@3590fc5b]" started-at="2026-04-23T09:30:27 GST" name="verifyMenuButtonClick" finished-at="2026-04-23T09:30:43 GST" duration-ms="15360" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[❌ Failed at selector: div.left-bar-item
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.41.0', revision: '9fc754f'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: driver.version: unknown]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: ❌ Failed at selector: div.left-bar-item
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.41.0', revision: '9fc754f'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: driver.version: unknown
+at utils.ShadowUtil.getShadowElement(ShadowUtil.java:36)
+at utils.ShadowUtil.click(ShadowUtil.java:74)
+at pages.HomePage1.clickMenuButton(HomePage1.java:133)
+at tests.HomePageTest.verifyMenuButtonClick(HomePageTest.java:91)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:744)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyProductDetailPage -->
-        <test-method is-config="true" signature="tearUp()[pri:0, instance:tests.HomePageTest@41d477ed]" started-at="2026-04-22T17:18:06 GST" name="tearUp" finished-at="2026-04-22T17:18:06 GST" duration-ms="228" status="PASS">
+        </test-method> <!-- verifyMenuButtonClick -->
+        <test-method is-config="true" signature="tearUp()[pri:0, instance:tests.HomePageTest@3590fc5b]" started-at="2026-04-23T09:30:43 GST" name="tearUp" finished-at="2026-04-23T09:30:43 GST" duration-ms="299" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearUp -->

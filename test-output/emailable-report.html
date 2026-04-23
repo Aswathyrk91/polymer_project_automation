@@ -9,10 +9,20 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Polymer_TestSuite</th></tr>
-<tr><td><a href="#t0">FunctionalTest</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">7,967</td><td></td><td></td></tr>
+<tr><td><a href="#t0">FunctionalTest</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">25,165</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Polymer_TestSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">FunctionalTest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">tests.HomePageTest</td><td><a href="#m0">verifyProductDetailPage</a></td><td rowspan="1">1776863883024</td><td rowspan="1">3535</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Polymer_TestSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">FunctionalTest &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">tests.HomePageTest</td><td><a href="#m0">verifyMenuButtonClick</a></td><td rowspan="1">1776922227891</td><td rowspan="1">15360</td></tr></tbody>
 </table>
-<h2>FunctionalTest</h2><h3 id="m0">tests.HomePageTest#verifyProductDetailPage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>FunctionalTest</h2><h3 id="m0">tests.HomePageTest#verifyMenuButtonClick</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: ❌ Failed at selector: div.left-bar-item
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: &apos;4.41.0&apos;, revision: &apos;9fc754f&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
+Driver info: driver.version: unknown
+	at utils.ShadowUtil.getShadowElement(ShadowUtil.java:36)
+	at utils.ShadowUtil.click(ShadowUtil.java:74)
+	at pages.HomePage1.clickMenuButton(HomePage1.java:133)
+	at tests.HomePageTest.verifyMenuButtonClick(HomePageTest.java:91)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

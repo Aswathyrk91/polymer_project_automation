@@ -5,9 +5,9 @@
     <classes>
       <class name="tests.HomePageTest">
         <methods>
+          <include name="verifyMenuButtonClick"/>
           <include name="tearUp"/>
           <include name="setUp"/>
-          <include name="verifyProductListingUI"/>
         </methods>
       </class> <!-- tests.HomePageTest -->
     </classes>

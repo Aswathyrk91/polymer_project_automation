@@ -1,6 +1,7 @@
 package pages;
 
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -287,56 +288,54 @@ public class Productlist {
 
 	        return fullText.split("\n")[0].trim();  // remove price
 	    }
-}
 
-/*
+
 public void verifyMenuButton() {
 
-  // Step 1: Get shop-app shadow root
-    SearchContext shadow1 = shadowUtil.getShadowRoot(By.cssSelector("shop-app"));
-    SearchContext shadow2 = shadowUtil.getShadowRoot(shadow1,By.cssSelector("app-header"));
-    
+	    // Step 1: Click menu button using ShadowUtil
+	    shadowUtil.click(
+	            "shop-app",
+	            "app-header",
+	            "div.left-bar-item",
+	            "paper-icon-button"
+	    );
 
-    // Step 2: Locate menu button (light DOM inside shadow)
-    WebElement menuBtntool = shadow2.findElement(By.cssSelector("div.left-bar-item"));
-    WebElement menuButton = menuBtntool.findElement(By.cssSelector("paper-icon-button"));
-    menuButton.click();
+	    // Step 2: Get menu items after drawer opens
+	    List<WebElement> menuItems = driver.findElements(
+	            By.cssSelector("shop-app")
+	    );
 
-    // Step 3: Handle drawer (may or may not have shadow root)
-    SearchContext drawerContext;
+	    // Navigate properly inside shadow DOM
+	    WebElement drawer = shadowUtil.getShadowElement(
+	            "shop-app",
+	            "app-drawer",
+	            "nav"
+	    );
 
-    try {
-        drawerContext = shadowUtil.getShadowRoot(shadow1, By.cssSelector("app-drawer"));
-    } catch (Exception e) {
-        drawerContext = shadow1;
-    }
+	    List<WebElement> actualItems = drawer.findElements(By.cssSelector("a"));
 
-    // Step 4: Get menu items
-    java.util.List<WebElement> menuItems =
-            drawerContext.findElements(By.cssSelector("a"));
+	    // Step 3: Expected values
+	    List<String> expectedItems = Arrays.asList(
+	            "Men's Outerwear",
+	            "Ladies Outerwear",
+	            "Men's T-Shirts",
+	            "Ladies T-Shirts"
+	    );
 
-    // Step 5: Expected values
-    java.util.List<String> expectedItems = java.util.Arrays.asList(
-            "Men's Outerwear",
-            "Ladies Outerwear",
-            "Men's T-Shirts",
-            "Ladies T-Shirts"
-    );
+	    // Step 4: Validation
+	    for (int i = 0; i < expectedItems.size(); i++) {
 
-    // Step 6: Validation
-    for (int i = 0; i < expectedItems.size(); i++) {
+	        String actual = actualItems.get(i).getText().trim();
 
-        String actual = menuItems.get(i).getText().trim();
+	        if (!actual.equals(expectedItems.get(i))) {
+	            throw new AssertionError(
+	                    "Mismatch at index " + i +
+	                    " Expected: " + expectedItems.get(i) +
+	                    " but found: " + actual
+	            );
+	        }
+	    }
 
-        if (!actual.equals(expectedItems.get(i))) {
-            throw new AssertionError(
-                    "Mismatch at index " + i +
-                    " Expected: " + expectedItems.get(i) +
-                    " but found: " + actual
-            );
-        }
-    }
-
-    System.out.println("✅ Menu validation successful");
-} */
-
+	    System.out.println("✅ Menu validation successful");
+	}
+}

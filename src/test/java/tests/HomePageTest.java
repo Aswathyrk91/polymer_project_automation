@@ -83,6 +83,18 @@ public class HomePageTest extends DriverSetup {
       productlist.clickFirstProduct();
   
     }
+    
+    @Test
+    public void verifyMenuButtonClick() {
+    	 HomePage1 home = new HomePage1(driver);
+
+        home.clickMenuButton();
+
+        Assert.assertTrue(
+            home.isMenuDrawerDisplayed(),
+            "Menu drawer did not open after clicking menu button"
+        );
+    }
     @Test
     public void verifyProductDetailPage() {
 

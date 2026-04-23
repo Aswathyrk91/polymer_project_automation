@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Polymer_TestSuite" class="navigator-link">
-              <span class="suite-name border-passed">Polymer_TestSuite</span>
+              <span class="suite-name border-failed">Polymer_TestSuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,21 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Polymer_TestSuite" class="hide-methods passed suite-Polymer_TestSuite"> (hide)</a> <!-- hide-methods passed suite-Polymer_TestSuite -->
-                      <a href="#" panel-name="suite-Polymer_TestSuite" class="show-methods passed suite-Polymer_TestSuite"> (show)</a> <!-- show-methods passed suite-Polymer_TestSuite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Polymer_TestSuite" class="hide-methods failed suite-Polymer_TestSuite"> (hide)</a> <!-- hide-methods failed suite-Polymer_TestSuite -->
+                      <a href="#" panel-name="suite-Polymer_TestSuite" class="show-methods failed suite-Polymer_TestSuite"> (show)</a> <!-- show-methods failed suite-Polymer_TestSuite -->
                     </span>
-                    <div class="method-list-content passed suite-Polymer_TestSuite">
+                    <div class="method-list-content failed suite-Polymer_TestSuite">
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Polymer_TestSuite" title="tests.HomePageTest" class="method navigator-link" hash-for-method="verifyProductDetailPage">verifyProductDetailPage</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Polymer_TestSuite" title="tests.HomePageTest" class="method navigator-link" hash-for-method="verifyMenuButtonClick">verifyMenuButtonClick</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Polymer_TestSuite -->
+                    </div> <!-- method-list-content failed suite-Polymer_TestSuite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -118,21 +118,33 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Polymer_TestSuite" class="panel Polymer_TestSuite">
-          <div class="suite-Polymer_TestSuite-class-passed">
+          <div class="suite-Polymer_TestSuite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">tests.HomePageTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyProductDetailPage">
-                  </a> <!-- verifyProductDetailPage -->
-                  <span class="method-name">verifyProductDetailPage</span>
+                  <a name="verifyMenuButtonClick">
+                  </a> <!-- verifyMenuButtonClick -->
+                  <span class="method-name">verifyMenuButtonClick</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: ❌ Failed at selector: div.left-bar-item
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: &apos;4.41.0&apos;, revision: &apos;9fc754f&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
+Driver info: driver.version: unknown
+	at utils.ShadowUtil.getShadowElement(ShadowUtil.java:36)
+	at utils.ShadowUtil.click(ShadowUtil.java:74)
+	at pages.HomePage1.clickMenuButton(HomePage1.java:133)
+	at tests.HomePageTest.verifyMenuButtonClick(HomePageTest.java:91)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Polymer_TestSuite-class-passed -->
+          </div> <!-- suite-Polymer_TestSuite-class-failed -->
         </div> <!-- panel Polymer_TestSuite -->
         <div panel-name="test-xml-Polymer_TestSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -147,7 +159,7 @@
     &lt;classes&gt;
       &lt;class name=&quot;tests.HomePageTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;verifyProductDetailPage&quot;/&gt;
+          &lt;include name=&quot;verifyMenuButtonClick&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- tests.HomePageTest --&gt;
     &lt;/classes&gt;
@@ -191,14 +203,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyProductDetailPage')
+data.setCell(0, 1, 'verifyMenuButtonClick')
 data.setCell(0, 2, 'tests.HomePageTest')
-data.setCell(0, 3, 3535);
+data.setCell(0, 3, 15360);
 window.suiteTableData['Polymer_TestSuite']= { tableData: data, tableDiv: 'times-div-Polymer_TestSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 seconds</span>
+              <span class="suite-total-time">Total running time: 15 seconds</span>
               <div id="times-div-Polymer_TestSuite">
               </div> <!-- times-div-Polymer_TestSuite -->
             </div> <!-- times-div -->
@@ -213,41 +225,27 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Polymer_TestSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">20 ignored methods</span>
+            <span class="header-content">21 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">tests.HomePageTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">verifyExpiredDefaultDateRejected</span>
+                <span class="ignored-method-name">verifyDefaultExpiryDateIsValid</span>
                 <br/>
-                <span class="ignored-method-name">verifyBillingCheckbox</span>
-                <br/>
-                <span class="ignored-method-name">verifyInvalidEmailShowsError</span>
-                <br/>
-                <span class="ignored-method-name">verifyQuantityUpdate</span>
-                <br/>
-                <span class="ignored-method-name">verifyAddToCartPopupFlow</span>
-                <br/>
-                <span class="ignored-method-name">verifyCheckoutHeaderAndShopLink</span>
-                <br/>
-                <span class="ignored-method-name">verifyEmailAndPhoneFields</span>
+                <span class="ignored-method-name">verifyCartDetails</span>
                 <br/>
                 <span class="ignored-method-name">verifyHomeTitle</span>
                 <br/>
                 <span class="ignored-method-name">verifyProductListingUI</span>
                 <br/>
-                <span class="ignored-method-name">verifyCartIsEmpty</span>
-                <br/>
-                <span class="ignored-method-name">verifyCardNumberShowsErrorForAlphabets</span>
-                <br/>
-                <span class="ignored-method-name">verifyCartDetails</span>
-                <br/>
-                <span class="ignored-method-name">verifyDefaultExpiryDateIsValid</span>
-                <br/>
-                <span class="ignored-method-name">verifyAddRemoveCartFlow</span>
-                <br/>
                 <span class="ignored-method-name">verifyCheckoutTotalMatchesCartTotal</span>
+                <br/>
+                <span class="ignored-method-name">verifyEmailAndPhoneFields</span>
+                <br/>
+                <span class="ignored-method-name">verifyShippingAddressFields</span>
+                <br/>
+                <span class="ignored-method-name">verifyProductDetailPage</span>
                 <br/>
                 <span class="ignored-method-name">verifyMultipleProductsInCart</span>
                 <br/>
@@ -255,9 +253,25 @@ return data;
                 <br/>
                 <span class="ignored-method-name">verifyCheckoutPage</span>
                 <br/>
-                <span class="ignored-method-name">verifyShippingAddressFields</span>
+                <span class="ignored-method-name">verifyInvalidEmailShowsError</span>
+                <br/>
+                <span class="ignored-method-name">verifyCardNumberShowsErrorForAlphabets</span>
+                <br/>
+                <span class="ignored-method-name">verifyAddRemoveCartFlow</span>
+                <br/>
+                <span class="ignored-method-name">verifyExpiredDefaultDateRejected</span>
                 <br/>
                 <span class="ignored-method-name">verifyNavigation</span>
+                <br/>
+                <span class="ignored-method-name">verifyBillingCheckbox</span>
+                <br/>
+                <span class="ignored-method-name">verifyCheckoutHeaderAndShopLink</span>
+                <br/>
+                <span class="ignored-method-name">verifyQuantityUpdate</span>
+                <br/>
+                <span class="ignored-method-name">verifyCartIsEmpty</span>
+                <br/>
+                <span class="ignored-method-name">verifyAddToCartPopupFlow</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -275,12 +289,14 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyProductDetailPage</span>
-                <span class="method-start">4164 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyMenuButtonClick</span>
+                <span class="method-start">9437 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearUp</span>
-                <span class="method-start">7709 ms</span>
+                <span class="method-start">24816 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

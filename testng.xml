@@ -6,7 +6,7 @@
             <class name="tests.HomePageTest">
 
                 <methods>
-                    <include name="verifyProductDetailPage"/>
+                    <include name="verifyMenuButtonClick"/>
                 </methods>
 
             </class>

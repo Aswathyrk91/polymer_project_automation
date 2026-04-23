@@ -128,6 +128,22 @@ public class HomePage1 {
 	        );
 	    }
 
+	    
+	    public void clickMenuButton() {
+	        shadow.click(
+	            "shop-app",
+	            "app-header",
+	            "div.left-bar-item",
+	            "paper-icon-button"
+	        );
+	    }
+
+	    public boolean isMenuDrawerDisplayed() {
+	        return shadow.isDisplayed(
+	            "shop-app",
+	            "app-drawer"
+	        );
+	    }
 	    // ===============================
 	    // SHOP NOW
 	    // ===============================
